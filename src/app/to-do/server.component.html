@@ -1,0 +1,79 @@
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<div class="container main">
+	<div class="row">
+		<div class="add_item col-lg-12">
+			<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+				<div class="col-lg-3">
+					<input type="text" name="title" placeholder="Enter title" class="form-control" ngModel/>
+				</div>
+				<div class="select col-lg-3">
+				  <label for="sel1" class="form-control">Select Priority:</label>
+				  <select class="select_form form-control" id="sel1" ngModel name="priority">
+				    <option>High</option>
+				    <option>Medium</option>
+				    <option>Low</option>
+				  </select>
+				</div>
+				<div class="estimate col-lg-3">
+					<input type="date" name="date" class="form-control">
+				</div>
+				<div class="add_buttons col-lg-3">
+	<!-- 					<button>Edit</button>
+					<button>Delete</button> -->
+					<!-- <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">Add</button> -->
+					<button type="submit" class="btn btn-primary">Add</button>
+				</div>
+			</form>
+		</div>
+		<div class="to_do_header col-lg-12">
+			<input type="text" name="searchbox pull-left" class="searchbox form-control col-lg-6" placeholder="Search" />
+			<div class="add_remove pull-right col-lg-4">
+				
+				<button (click)="removeItem()" class="btn btn-primary">Remove</button>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<table class="col-lg-12">
+			<tr class="col-lg-12">
+				<th class="col-lg-4">Title</th>
+				<th class="col-lg-4">Priority</th>
+				<th class="col-lg-4">Estimate</th>
+				<th class="col-lg-4">Action</th>
+			</tr>
+			<tr *ngFor="let item of data" class="col-lg-12">
+				<td class="col-lg-4">{{item.title}}</td>
+				<td class="col-lg-4">{{item.priority}}</td>
+				<td class="col-lg-4">{{item.estimate}}</td>
+				<td class="col-lg-4">
+					<button>Edit</button>
+					<button>Delete</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!--   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+       Modal content
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> -->

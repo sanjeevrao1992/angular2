@@ -1,0 +1,16 @@
+/*.to_do_header{
+	display: inline-flex;
+	width: 100%;
+}*/
+.searchbox{
+	width: 30%;
+}
+.add_remove{
+	text-align: right;
+}
+.add_item{
+	margin-top: 15px;
+}
+.to_do_header{
+	margin-top: 15px;
+}
